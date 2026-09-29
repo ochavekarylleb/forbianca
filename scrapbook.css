@@ -230,7 +230,7 @@ body{background:#edd7d1 var(--meadow) center top/cover fixed no-repeat;color:var
 .birthday-art .sunset-orbit{top:100px;width:min(100%,340px);right:4%}
 .birthday-art .scrapbook-figure-sticker{top:5px;right:7%;width:170px;transform:rotate(8deg)}
 .birthday-art .uploaded-quote-sticker{top:auto;bottom:20px;left:0;width:190px;transform:rotate(-7deg)}
-.birthday-art .tape-a{top:125px;left:calc(50% - 120px);transform:rotate(-28deg)}
+.birthday-art .tape-a{top:105px;left:calc(50% - 120px);transform:rotate(-28deg)}
 .birthday-art .flower-a{left:auto;right:0;top:64px}
 .birthday-art .flower-b{left:0;right:auto;bottom:5px}
 .birthday-art .sparkle-sticker-one{top:260px;right:0}
@@ -251,7 +251,7 @@ body{background:#edd7d1 var(--meadow) center top/cover fixed no-repeat;color:var
  .birthday-art .scrapbook-figure-sticker{width:130px;top:20px;right:3%}
  .birthday-art .uploaded-quote-sticker{width:155px;bottom:25px}
  .birthday-art .sunset-orbit{width:250px;right:0}
- .birthday-art .tape-a{top:112px;left:calc(50% - 105px);width:65px}
+ .birthday-art .tape-a{top:92px;left:calc(50% - 105px);width:65px}
  .birthday-art .flower-a{font-size:44px;top:70px;right:-2%}
  .birthday-art .flower-b{font-size:36px;bottom:0}
  .birthday-art .hero-sticker-word{font-size:17px;bottom:-14px}
