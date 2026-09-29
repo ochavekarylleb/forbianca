@@ -24,6 +24,7 @@
   let touchStart = null;
   let activePhotoIndex = 0;
   let spotifyController = null;
+  let spotifyApiPromise = null;
 
   const byId = (id) => document.getElementById(id);
   const setText = (id, text) => { byId(id).textContent = text ?? ''; };
@@ -61,21 +62,61 @@
     openingAudioControl.querySelector('span').textContent = isPlaying ? 'Pause the birthday song' : 'Play the birthday song';
   }
 
-  function mountSpotifyPlayer(song) {
-    const frame = document.createElement('iframe');
-    frame.title = `${song.title} — ${song.artist} Spotify player`;
-    frame.src = song.spotifyEmbedUrl;
-    frame.width = '100%';
-    frame.height = '152';
-    frame.loading = 'eager';
-    frame.allowFullscreen = true;
-    frame.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-    frame.style.border = '0';
-    frame.style.borderRadius = '12px';
+  function loadSpotifyApi() {
+    if (!spotifyApiPromise) {
+      spotifyApiPromise = new Promise((resolve, reject) => {
+        window.onSpotifyIframeApiReady = resolve;
+        const script = document.createElement('script');
+        script.src = 'https://open.spotify.com/embed/iframe-api/v1';
+        script.async = true;
+        script.addEventListener('error', reject, { once: true });
+        document.head.append(script);
+      });
+    }
+    return spotifyApiPromise;
+  }
+
+  function clearSpotifyPlayer() {
+    spotifyEmbed = null;
+    spotifyController?.destroy();
+    spotifyController = null;
     spotifyEmbedShell.replaceChildren();
-    spotifyEmbedShell.append(frame);
-    stopOpeningAudio();
-    frame.addEventListener('pointerdown', stopOpeningAudio, { once: true });
+  }
+
+  function mountSpotifyPlayer(song) {
+    const placeholder = document.createElement('div');
+    spotifyEmbed = placeholder;
+    spotifyEmbedShell.append(placeholder);
+    loadSpotifyApi().then((api) => {
+      if (spotifyEmbed !== placeholder) return;
+      const [, type, id] = new URL(song.spotifyEmbedUrl).pathname.split('/').slice(1);
+      api.createController(placeholder, {
+        uri: `spotify:${type}:${id}`,
+        width: '100%',
+        height: 152
+      }, (controller) => {
+        if (spotifyEmbed !== placeholder) {
+          controller.destroy();
+          return;
+        }
+        spotifyController = controller;
+        const onPlaybackStarted = () => {
+          if (spotifyController === controller) stopOpeningAudio();
+        };
+        controller.addListener('playback_started', onPlaybackStarted);
+        controller.addListener('playback_update', (event) => {
+          if (event.data.isPaused === false && event.data.isBuffering === false) {
+            onPlaybackStarted();
+          }
+        });
+        const frame = spotifyEmbedShell.querySelector('iframe');
+        if (frame) frame.title = `${song.title} — ${song.artist} Spotify player`;
+      });
+    }).catch(() => {
+      if (spotifyEmbed === placeholder) {
+        placeholder.textContent = 'Spotify player could not load. Open the song in Spotify below.';
+      }
+    });
   }
 
   const birthdayHeading = byId('hero-title');
@@ -186,8 +227,7 @@
     vinyl.hidden = hasSpotifyEmbed;
     audioControls.hidden = hasSpotifyEmbed || !hasAudio;
     spotifyEmbedShell.hidden = !hasSpotifyEmbed;
-    spotifyEmbedShell.replaceChildren();
-    spotifyEmbed = null;
+    clearSpotifyPlayer();
     if (hasSpotifyEmbed) mountSpotifyPlayer(song);
     spotifyOpenLink.hidden = !song.spotifyUrl;
     if (song.spotifyUrl) spotifyOpenLink.href = song.spotifyUrl;
@@ -387,9 +427,8 @@
   });
   letterDialog.addEventListener('close', () => {
     if (letterDialog.open) return;
-    spotifyEmbedShell.replaceChildren();
+    clearSpotifyPlayer();
     spotifyEmbedShell.hidden = true;
-    spotifyEmbed = null;
     if (returnFocusTo?.isConnected) returnFocusTo.focus();
     returnFocusTo = null;
     persistentPlayer.hidden = !letters[activeLetterIndex]?.song.audioSrc;
