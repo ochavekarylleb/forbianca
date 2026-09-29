@@ -247,59 +247,91 @@
     }
   }
 
+  // Decode nearby photos before navigation; keep the current photo until the next is ready.
+  const cameraPhotoCache = new Map();
+  let cameraRenderVersion = 0;
+
+  function prepareCameraPhoto(photo, priority = 'low') {
+    let cached = cameraPhotoCache.get(photo.src);
+    if (cached) {
+      cached.image.fetchPriority = priority;
+      return cached;
+    }
+    const image = new Image();
+    image.alt = photo.alt || '';
+    image.loading = 'eager';
+    image.decoding = 'async';
+    image.fetchPriority = priority;
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    image.setAttribute('aria-label', `${photo.alt || 'Memory photo'}. Open larger image`);
+    image.addEventListener('click', () => openLightbox(photo));
+    image.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox(photo);
+      }
+    });
+    cached = { image, ready: false, promise: null };
+    image.src = photo.src;
+    cached.promise = image.decode().then(() => {
+      cached.ready = true;
+      return image;
+    }).catch((error) => {
+      cameraPhotoCache.delete(photo.src);
+      throw error;
+    });
+    cameraPhotoCache.set(photo.src, cached);
+    return cached;
+  }
+
+  function preloadNearbyPhotos(index) {
+    const keep = new Set();
+    for (const offset of [0, 1, -1, 2, -2]) {
+      const photo = galleryEntries[(index + offset + galleryEntries.length) % galleryEntries.length];
+      keep.add(photo.src);
+      if (offset) prepareCameraPhoto(photo).promise.catch(() => {});
+    }
+    // Limit decoded image memory, especially on phones.
+    for (const src of cameraPhotoCache.keys()) {
+      if (!keep.has(src)) cameraPhotoCache.delete(src);
+    }
+  }
+
   function renderMemories() {
     const screen = byId('camera-screen');
     const count = galleryEntries.length;
-    const previous = byId('photo-prev');
-    const next = byId('photo-next');
-    previous.disabled = count < 2;
-    next.disabled = count < 2;
+    const version = ++cameraRenderVersion;
+    byId('photo-prev').disabled = count < 2;
+    byId('photo-next').disabled = count < 2;
     if (!count) {
       setText('photo-count', '0 / 0');
       return;
     }
     activePhotoIndex = Math.min(activePhotoIndex, count - 1);
-    const photo = galleryEntries[activePhotoIndex];
-    screen.replaceChildren();
-    if (photo.src) {
-      const image = document.createElement('img');
-      image.src = photo.src;
-      image.alt = photo.alt || '';
-      image.loading = 'lazy';
-      image.style.objectFit = photo.fit || 'contain';
-      if (photo.objectPosition) image.style.objectPosition = photo.objectPosition;
-      image.tabIndex = 0;
-      image.setAttribute('role', 'button');
-      image.setAttribute('aria-label', `${photo.alt || 'Memory photo'}. Open larger image`);
-      image.addEventListener('click', () => openLightbox(photo));
-      image.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLightbox(photo); }
-      });
-      screen.append(image);
-    } else {
-      const empty = document.createElement('div');
-      empty.className = 'memory-empty';
-      const message = document.createElement('p');
-      message.textContent = photo.personName
-        ? `Portrait of ${photo.personName} will appear here.`
-        : 'Your memories will appear here.';
-      const blossom = document.createElement('span');
-      blossom.setAttribute('aria-hidden', 'true');
-      blossom.textContent = '✿';
-      empty.append(blossom, message);
-      screen.append(empty);
-    }
-    setText('gallery-caption', photo.caption || (photo.personName ? `Portrait of ${photo.personName}` : 'A little moment, kept close.'));
-    setText('photo-count', `${activePhotoIndex + 1} / ${count}`);
+    const index = activePhotoIndex;
+    const photo = galleryEntries[index];
+    const cached = prepareCameraPhoto(photo, 'high');
+    const showPhoto = () => {
+      if (version !== cameraRenderVersion) return;
+      if (screen.firstElementChild !== cached.image) screen.replaceChildren(cached.image);
+      screen.setAttribute('aria-busy', 'false');
+      setText('gallery-caption', photo.caption || 'A little moment, kept close.');
+      setText('photo-count', `${index + 1} / ${count}`);
+      preloadNearbyPhotos(index);
+    };
+    screen.setAttribute('aria-busy', 'true');
+    if (cached.ready) showPhoto();
+    else cached.promise.then(showPhoto).catch(() => {
+      if (version !== cameraRenderVersion) return;
+      screen.setAttribute('aria-busy', 'false');
+      setText('gallery-caption', 'This photo could not load. Try another photo.');
+    });
   }
 
   function changePhoto(direction) {
     if (galleryEntries.length < 2) return;
     activePhotoIndex = (activePhotoIndex + direction + galleryEntries.length) % galleryEntries.length;
-    const screen = byId('camera-screen');
-    screen.classList.remove('screen-blink');
-    void screen.offsetWidth;
-    screen.classList.add('screen-blink');
     renderMemories();
     if (byId('photo-lightbox').open) {
       const photo = galleryEntries[activePhotoIndex];
