@@ -1,0 +1,6 @@
+.DS_Store
+.vscode/
+.codex/
+.agents/
+_site/
+node_modules/

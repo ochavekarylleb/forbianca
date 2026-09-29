@@ -1,0 +1,282 @@
+/* Scrapbook page styles only. Existing header, footer typography and core font pairing stay in styles.css. */
+:root{--berry:#2c2927;--rosewood:#713647;--dusty-sky:#7d9ba6;--light-blue-gray:#a5b7ba;--coral-pink:#e9a293;--pale-blush:#f3c3b7;--blush:#f3c3b7;--dusty-rose:#e9a293;--ivory:#f1e9d6;--warm-ivory:#f1e9d6;--charcoal:#2c2927;--meadow:url("images/meadow-background.jpg");--handwritten-font:"Just Like Heaven",var(--serif)}
+@font-face{font-family:"Just Like Heaven";src:url("fonts/just-like-heaven.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+body{background:#edd7d1 var(--meadow) center top/cover fixed no-repeat;color:var(--berry)}
+.scrapbook{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#f6e6df20 0%,#f5e8e228 42%,#f6e8e637 100%)}
+.scrapbook:before{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(180deg,#fff6ed14,#fff8f024 37%,#f4e1e13b 100%);pointer-events:none}
+.handwritten{font-family:var(--handwritten-font);font-style:normal;color:var(--rosewood);font-weight:400;line-height:1.45}
+.birthday-hero{max-width:1160px;min-height:640px;margin:0 auto;padding:78px 8% 92px;display:grid;grid-template-columns:1fr .88fr;align-items:center;position:relative;overflow:hidden}
+.birthday-copy{z-index:2;max-width:520px;animation:reveal-up .7s ease both}
+.dedication{font-size:22px;margin:0 0 14px;transform:rotate(-3deg);transform-origin:left center}
+.birthday-copy .eyebrow{margin:0 0 23px;color:var(--rosewood)}
+.birthday-copy h1{font:500 clamp(57px,7.2vw,90px)/.99 var(--serif);letter-spacing:-3px;margin:0 0 23px;color:#3e2926}
+.birthday-copy h1 em{color:var(--rosewood);font-weight:500}
+.birthday-copy .hero-intro{max-width:390px;margin:0;color:#5e4545;font-size:15px;line-height:1.85}
+.scroll-prompt{font-size:11px;letter-spacing:.15px;color:#765c5d;margin:20px 0 19px}
+.scrapbook-button{display:inline-flex;align-items:center;gap:26px;padding:13px 17px 13px 21px;background:var(--rosewood);color:var(--ivory);text-decoration:none;font-size:12px;transition:transform .2s,background .2s;box-shadow:0 8px 18px #5c303323}
+.scrapbook-button span{font-size:17px}.scrapbook-button:hover{transform:translateY(-2px);background:#572b3a}.scrapbook-button:focus-visible,.envelope-button:focus-visible,.letter-dialog button:focus-visible,.gallery-buttons button:focus-visible,.persistent-player button:focus-visible,.photo-lightbox button:focus-visible,.back-to-top:focus-visible{outline:3px solid #713647;outline-offset:4px}
+.birthday-art{height:440px;position:relative;display:grid;place-items:center;animation:reveal-up .8s .12s ease both}.sunset-orbit{position:absolute;width:min(34vw,340px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 37% 32%,#fff8eaa8,#f5bfd28c 57%,#dba5b488 100%);box-shadow:0 0 0 20px #fbe9df33;top:38px;right:6%}.birthday-scrap{position:absolute;z-index:2;width:263px;min-height:294px;background:#fff6e7;box-shadow:0 24px 36px #603a3829;padding:31px 27px;transform:rotate(4deg);display:flex;flex-direction:column;align-items:center;justify-content:center;clip-path:polygon(0 1%,8% 0,17% 1%,26% 0,36% 1%,46% 0,57% 1%,67% 0,77% 1%,88% 0,100% 1%,99% 14%,100% 26%,99% 40%,100% 55%,99% 68%,100% 82%,99% 99%,89% 100%,78% 99%,67% 100%,56% 99%,45% 100%,34% 99%,23% 100%,12% 99%,0 100%,1% 87%,0 72%,1% 57%,0 43%,1% 28%,0 15%)}
+.birthday-scrap>span{font-size:9px;letter-spacing:2px;color:#9a6870}.birthday-scrap strong{text-align:center;font:500 34px/1.13 var(--serif);color:#593943;margin:24px 0 19px}.birthday-scrap i{font-style:normal;color:#b65f78;font-size:26px}.tape{height:27px;width:78px;position:absolute;z-index:3;background:#ddb2bd9c;box-shadow:0 2px 4px #60404118}.tape-a{top:calc(50% - 139px);left:calc(50% - 139px);transform:rotate(-28deg)}.paper-flower{position:absolute;z-index:4;font-size:61px;text-shadow:0 8px 8px #533a3030;color:#d17c8b;animation:drift 5s ease-in-out infinite}.flower-a{right:6%;top:29px;transform:rotate(18deg)}.flower-b{left:7%;bottom:39px;color:#9e836e;font-size:46px;animation-delay:-2.1s}.hero-sticker{position:absolute;z-index:3;pointer-events:none;text-shadow:0 5px 12px #633b3730}.sticker-flower{right:44%;top:10%;color:#bf7980;font-size:35px;animation:drift 6s ease-in-out infinite}.sticker-heart{right:8%;bottom:16%;color:#9e5967;font-size:23px;transform:rotate(-14deg)}.tiny-star{position:absolute;color:#824551;font-size:28px}.star-a{right:5%;top:48%}.star-b{left:12%;top:18%;font-size:19px}.hero-sticker-word{position:absolute;z-index:4;right:0;bottom:54px;color:#693d48;font:italic 20px var(--serif);transform:rotate(-10deg)}
+.scrap-section{max-width:1100px;margin:0 auto;padding:55px 8% 110px;position:relative;scroll-margin-top:20px}.section-kicker{display:flex;gap:13px;align-items:center;color:#765c5d;font-size:9px;letter-spacing:1.8px}.section-kicker>span:first-child{font:500 15px var(--serif);color:var(--rosewood)}.kicker-rule{height:1px;width:46px;background:#b9858d}.section-heading{display:grid;grid-template-columns:1.1fr .75fr;gap:50px;align-items:end;margin:38px 0 0}.section-heading .eyebrow{margin:0 0 12px}.section-heading h2{font:500 clamp(43px,5.5vw,65px)/1.06 var(--serif);letter-spacing:-1.8px;color:#3e2926;margin:0}.section-heading h2 em{font-weight:500;color:var(--rosewood)}.section-heading>p{max-width:355px;color:#5f4947;font-size:13px;line-height:1.9;margin:0 0 4px}.section-note{font-size:19px;margin:16px 0 23px;transform:rotate(-2deg);width:max-content;max-width:100%}.section-note span{font-style:normal;padding-left:5px}
+.envelope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,3vw,36px);align-items:center;padding:16px 0 4px}.envelope-button{border:0;background:transparent;color:inherit;padding:10px 4px 14px;cursor:pointer;text-align:center;min-width:0}.envelope-art{width:100%;aspect-ratio:1.5;display:block;position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#efcfd4 0%,#e6b9c3 48%,#dbaab6 100%);border-radius:4px 5px 7px 6px;box-shadow:0 14px 22px #54323830,inset 0 1px 1px #fff9;transition:transform .28s ease,filter .28s ease}.envelope-art:before,.envelope-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}.envelope-art:before{background:linear-gradient(140deg,transparent 49.6%,#cc94a333 50%,transparent 50.7%),linear-gradient(220deg,transparent 49.6%,#cc94a333 50%,transparent 50.7%)}.envelope-art:after{inset:6px;border:1px solid #f9e9e6a1;border-radius:3px}.envelope-lace{position:absolute;z-index:2;left:0;right:0;top:0;height:24%;background:radial-gradient(ellipse at center,#fff1e8 0 25%,transparent 28%) 0 0/16px 11px repeat-x,linear-gradient(#f9e9e5,#e9ced0);mask-image:linear-gradient(#000 0 67%,transparent 100%);opacity:.86}.envelope-flap{position:absolute;z-index:3;inset:0 0 auto;height:64%;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(150deg,#f5dce0,#e8c0ca 75%);filter:drop-shadow(0 4px 2px #8e596222);transform-origin:top;transition:transform .34s ease;backface-visibility:hidden}.envelope-seal{position:absolute;z-index:4;left:50%;top:42%;transform:translate(-50%,-50%);width:clamp(33px,5vw,54px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fffaf5,#ead9d4 69%,#caa6a0);border:2px solid #f7eee8;color:#936f6d;font:20px var(--serif);box-shadow:0 3px 8px #744d4c46;transition:opacity .15s,transform .22s}.envelope-label{position:absolute;z-index:5;bottom:9%;left:8%;right:8%;display:flex;justify-content:space-between;gap:5px;font:italic clamp(12px,1.6vw,16px)/1.25 var(--handwritten-font);color:#633c46;text-shadow:0 1px #fff7;white-space:nowrap}.envelope-label span:last-child{font-size:.82em;align-self:end}.envelope-postmark{position:absolute;z-index:3;top:12%;right:9%;font-size:19px;color:#985765;opacity:.68}.envelope-status{display:block;margin-top:15px;font-size:10px;letter-spacing:.6px;color:#684e50}.envelope-button:hover .envelope-art,.envelope-button:focus-visible .envelope-art{transform:translateY(-7px) rotate(-1.2deg);filter:saturate(1.04)}.envelope-button:nth-child(2) .envelope-art{transform:rotate(2deg)}.envelope-button:nth-child(2):hover .envelope-art,.envelope-button:nth-child(2):focus-visible .envelope-art{transform:translateY(-7px) rotate(.5deg)}.envelope-button:nth-child(3) .envelope-art{transform:rotate(-1.5deg)}.envelope-button.is-opening .envelope-seal{opacity:0;transform:translate(-50%,-80%) scale(.5)}.envelope-button.is-opening .envelope-flap{transform:rotateX(165deg)}.envelope-button.is-opened .envelope-art{box-shadow:0 0 0 2px #fff2,0 10px 20px #5432381c}.envelope-button.is-opened .envelope-status:before{content:"✓  ";color:#713647}
+.memories-section{padding-top:60px;padding-bottom:104px}.camera-layout{max-width:835px;margin:32px auto 0;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(165px,.6fr);gap:36px;align-items:center}.camera-wrap{aspect-ratio:735/479;position:relative;isolation:isolate;overflow:hidden;border-radius:5%/8%;border:10px solid #c7849d;background:linear-gradient(145deg,#e8c0cf,#d392ab 47%,#bd7b94);box-shadow:0 17px 30px #51303c3d,inset 0 0 0 4px #efc9d6,inset 0 0 20px #8b455b55}.camera-wrap:before{content:"";position:absolute;inset:2% 2% auto;height:17%;z-index:3;pointer-events:none;background:linear-gradient(180deg,#ffe7ef8a,transparent);border-radius:20px}.camera-wrap:after{content:"";position:absolute;z-index:4;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 2px #f8dbe3a3,inset 0 0 18px #431f3344}.camera-screen{position:absolute;z-index:1;left:9%;top:22.95%;width:56.87%;height:65.55%;background:#f4eceb;border:clamp(4px,.75vw,8px) solid #3b2931;border-radius:2%/3%;box-shadow:0 0 0 2px #eccbd4,inset 0 0 18px #6c485522;overflow:hidden;display:grid;place-items:center;transition:opacity .15s}.camera-screen img{width:100%;height:100%;object-fit:contain;background:#f5edec;cursor:zoom-in}.camera-screen.screen-blink{animation:screen-blink .34s ease}.memory-empty{text-align:center;color:#835b69;font:500 clamp(12px,2.5vw,23px)/1.45 var(--serif)}.memory-empty>span{font-size:clamp(19px,3vw,31px);color:#ae7181}.memory-empty p{margin:4px}.camera-controls{position:absolute;right:5%;top:29%;width:19%;height:56%;display:flex;align-items:center;justify-content:space-around;flex-direction:column}.camera-controls i{display:block;border-radius:50%;border:3px solid #edc8d4;background:radial-gradient(circle at 32% 29%,#fbe9ef,#b47b91 75%);box-shadow:0 2px 4px #52293a76;width:clamp(17px,4.5vw,42px);aspect-ratio:1}.camera-controls i:nth-child(2){width:clamp(34px,8.5vw,77px);border:5px ridge #e8c1ce}.camera-brand{position:absolute;bottom:3%;left:27%;width:40%;text-align:center;color:#fff1f6;font:italic clamp(7px,1vw,10px) var(--sans);letter-spacing:1.2px}.gallery-controls{display:flex;flex-direction:column;align-items:flex-start}.gallery-caption{min-height:52px;margin:0;color:#634d4d;font:16px/1.6 var(--serif)}.gallery-buttons{display:flex;align-items:center;gap:17px;margin-top:19px;color:#76575e;font-size:11px}.gallery-buttons button{width:39px;height:39px;border-radius:50%;border:1px solid #956674;background:#fff7edcc;color:#713647;font-size:18px;cursor:pointer}.gallery-buttons button:disabled{opacity:.38;cursor:not-allowed}.gallery-note{font-size:16px;margin:23px 0 0;transform:rotate(-3deg)}
+.closing-section{position:relative;width:min(88%,760px);margin:12px auto 104px;padding:62px 6% 46px;text-align:center;background:linear-gradient(135deg,#fff8ecf2,#fff1e9ed);box-shadow:0 18px 38px #50303825;clip-path:polygon(0 1%,8% 0,18% 1%,27% 0,37% 1%,47% 0,58% 1%,68% 0,78% 1%,89% 0,100% 1%,99% 14%,100% 27%,99% 40%,100% 53%,99% 67%,100% 80%,99% 100%,89% 99%,78% 100%,66% 99%,55% 100%,44% 99%,32% 100%,20% 99%,9% 100%,0 99%,1% 86%,0 72%,1% 59%,0 45%,1% 31%,0 16%)}.closing-tape{position:absolute;left:calc(50% - 42px);top:-2px;width:84px;height:24px;background:#dcb5bead;transform:rotate(-3deg)}.closing-bow{display:block;font-size:23px;margin-bottom:13px}.closing-section .eyebrow{margin:0 0 12px}.closing-section h2{font:500 clamp(27px,4vw,43px)/1.2 var(--serif);margin:0;color:#3e2926}.closing-hand{font-size:20px;margin:18px 0 24px}.back-to-top{display:inline-block;color:#704c54;font-size:9px;letter-spacing:1.4px;text-decoration:none;text-transform:uppercase;border-bottom:1px solid #bd9298;padding-bottom:4px}
+.letter-dialog,.photo-lightbox{border:0;padding:0;color:#3e2926;max-width:none;max-height:none;overflow:visible;background:transparent}.letter-dialog{width:min(980px,calc(100% - 32px));height:min(770px,calc(100dvh - 32px));overflow:auto}.letter-dialog::backdrop,.photo-lightbox::backdrop{background:#37212a6b;backdrop-filter:blur(2px)}.dialog-layout{min-height:100%;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(270px,.8fr);align-items:stretch;gap:25px;padding:30px}.dialog-close{position:fixed;z-index:9;top:max(14px,env(safe-area-inset-top));right:max(15px,env(safe-area-inset-right));width:42px;height:42px;border:1px solid #a67b7e;border-radius:50%;background:#fff9f0;color:#633a48;font:25px/1 var(--sans);cursor:pointer;box-shadow:0 4px 12px #47273126}.opened-letter{position:relative;align-self:stretch;min-height:550px;padding:70px clamp(25px,5vw,64px) 40px;background:linear-gradient(90deg,#eac7cf 0 16px,transparent 16px),repeating-linear-gradient(0deg,transparent 0 31px,#d9cbbd24 32px),#fff8ed;box-shadow:0 18px 42px #3b202b3d;clip-path:polygon(0 1%,9% 0,20% 1%,31% 0,42% 1%,53% 0,65% 1%,76% 0,88% 1%,100% 0,99% 12%,100% 24%,99% 36%,100% 49%,99% 62%,100% 75%,99% 88%,100% 100%,88% 99%,77% 100%,65% 99%,53% 100%,41% 99%,30% 100%,18% 99%,0 100%,1% 87%,0 75%,1% 61%,0 49%,1% 36%,0 23%,1% 12%)}.paperclip{position:absolute;right:11%;top:14px;width:19px;height:64px;border:3px solid #82676a;border-bottom-color:transparent;border-radius:13px 13px 8px 8px;transform:rotate(5deg)}.letter-flower{position:absolute;right:9%;bottom:8%;font-size:58px;color:#ce8e9d;opacity:.58;transform:rotate(-18deg);pointer-events:none}.letter-eyebrow{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:#977577}.opened-letter h2{font-size:25px;margin:10px 0 22px}.dialog-paragraphs{font:15px/1.85 var(--sans);color:#513f3d}.dialog-paragraphs p{margin:0 0 17px}.dialog-signature{font-size:22px;margin:24px 0 3px}.letter-from{font-size:10px;color:#806d66}.letter-nav{position:absolute;left:8%;right:8%;bottom:26px;display:flex;align-items:center;justify-content:space-between;gap:10px}.letter-nav button{padding:8px 0;border:0;border-bottom:1px solid #bb9396;background:none;font:11px var(--sans);color:#693b47;cursor:pointer}.letter-nav button:disabled{opacity:.4;cursor:not-allowed}.letter-nav span{font-size:10px;color:#8a7371}.record-side{align-self:center;text-align:center;padding:15px 11px}.player-note{font-size:17px;transform:rotate(-4deg);margin:0 0 21px}.record-side h3{font:500 24px/1.16 var(--serif);margin:0 0 10px;color:#4a3037}.player-intro{font-size:11px;line-height:1.65;color:#755c5d;max-width:270px;margin:0 auto 7px}.song-meta{font-size:10px;color:#76545f;margin:0 0 14px}.song-reason{max-width:250px;margin:0 auto 12px;font:italic 12px/1.6 var(--serif);color:#75525d}.vinyl{width:188px;max-width:58vw;aspect-ratio:1;border-radius:50%;margin:10px auto 15px;display:grid;place-items:center;background:repeating-radial-gradient(circle,#eabdc9 0 2px,#dba4b4 3px 4px,#e6b5c3 5px 7px);box-shadow:0 10px 18px #4b293632,inset 0 0 0 1px #ffebf0;position:relative}.vinyl:before{content:"";position:absolute;inset:8%;border:1px solid #fff9;border-radius:50%;box-shadow:0 0 0 2px #a8647c22,0 0 0 9px #fff1}.vinyl-grooves{position:relative;width:40%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff2ed 0 7%,#dfafbb 8% 11%,#f1d0d5 12% 75%,#d9a3b2 76% 100%);box-shadow:0 2px 8px #6033453a}.vinyl-grooves:after{content:"";position:absolute;width:8px;aspect-ratio:1;border-radius:50%;background:#764052;box-shadow:0 0 0 3px #f7e4dd}.vinyl-label{display:flex;flex-direction:column;align-items:center;color:#774958}.vinyl-label span{font-size:22px}.vinyl-label small{font-size:7px;letter-spacing:1.5px}.vinyl.is-playing{animation:spin-record 8s linear infinite}.vinyl.is-buffering{opacity:.78}.play-button{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:0;background:#713647;color:#fff8ec;font:11px var(--sans);cursor:pointer}.play-button:disabled{background:#987781;cursor:not-allowed}.play-button span{font:inherit}.missing-audio{font-size:10px;color:#775c61;margin:10px 0}.audio-controls{max-width:230px;margin:15px auto 0;text-align:left}.audio-controls label{display:block;font-size:9px;letter-spacing:.4px;color:#775c61}.audio-controls input[type=range]{width:100%;accent-color:#713647;height:18px}.audio-times{display:flex;justify-content:space-between;color:#775c61;font-size:9px;margin-top:-3px}.audio-controls .volume-label{margin-top:7px}.persistent-player{position:fixed;z-index:10;right:max(16px,env(safe-area-inset-right));bottom:max(15px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:11px;max-width:min(330px,calc(100vw - 28px));padding:10px 14px 10px 10px;border:1px solid #d5aeba;background:#fff7ecf2;box-shadow:0 7px 24px #47273135;backdrop-filter:blur(8px)}.persistent-player[hidden]{display:none}.persistent-player button{border:0;width:35px;height:35px;border-radius:50%;background:#713647;color:white;cursor:pointer}.persistent-player button:disabled{opacity:.55;cursor:not-allowed}.persistent-copy{display:flex;flex-direction:column;gap:3px;min-width:0}.persistent-copy strong{font:500 11px var(--sans);color:#51313a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.persistent-copy small{font-size:9px;color:#836870}.persistent-state{color:#8a5061;margin-left:auto}.photo-lightbox{width:min(92vw,1040px);height:min(92dvh,860px);padding:44px 24px 24px;background:#fff8ed;box-shadow:0 20px 60px #27161c66;text-align:center}.photo-lightbox img{max-width:100%;max-height:calc(100% - 32px);object-fit:contain}.photo-lightbox p{font-size:12px;color:#694b51;margin:10px 0 0}.photo-lightbox .dialog-close{position:absolute}
+@keyframes reveal-up{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -8px}}@keyframes spin-record{to{transform:rotate(360deg)}}@keyframes screen-blink{0%{opacity:1}40%{opacity:.22}100%{opacity:1}}
+@media(max-width:760px){body{background-position:center top;background-attachment:scroll}.birthday-hero{min-height:0;padding:57px 8% 71px;grid-template-columns:1fr;gap:0}.birthday-copy{max-width:590px}.birthday-copy h1{font-size:clamp(59px,12.5vw,82px)}.birthday-art{height:330px;margin:5px auto 0;width:min(100%,430px)}.sunset-orbit{width:min(65vw,285px);right:12%;top:25px}.birthday-scrap{width:220px;min-height:245px}.birthday-scrap strong{font-size:29px}.flower-a{right:2%;top:16px}.flower-b{left:1%;bottom:23px}.hero-sticker-word{right:0;bottom:30px;font-size:17px}.sticker-flower{right:15%;top:51%}.scrap-section{padding:44px 7% 78px}.section-heading{grid-template-columns:1fr;gap:16px;margin-top:29px}.section-heading h2{font-size:clamp(42px,9vw,57px)}.section-heading>p{max-width:480px}.envelope-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:4px}.envelope-label{font-size:clamp(12px,3vw,16px)}.camera-layout{grid-template-columns:1fr;gap:19px;margin-top:25px}.gallery-controls{align-items:center;text-align:center}.gallery-caption{min-height:0}.gallery-note{margin-top:13px}.closing-section{margin-bottom:74px;width:88%;padding:53px 7% 39px}.letter-dialog{width:calc(100% - 18px);height:calc(100dvh - 18px)}.dialog-layout{grid-template-columns:1fr;gap:15px;padding:22px 18px 26px}.opened-letter{min-height:510px;padding:59px 30px 78px}.dialog-paragraphs{font-size:14px}.record-side{padding:18px 8px 20px;border-top:1px dashed #c99da3}.player-note{margin-bottom:12px}.vinyl{width:154px}.letter-nav{bottom:22px}.persistent-player{right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom))}}
+@media(max-width:430px){.birthday-hero{padding-left:7%;padding-right:7%}.birthday-copy h1{letter-spacing:-2.5px}.birthday-copy .hero-intro{font-size:14px}.tape-a{top:calc(50% - 120px);left:calc(50% - 116px)}.envelope-grid{grid-template-columns:1fr;max-width:370px;margin:0 auto}.envelope-button{padding:9px 6px}.envelope-art{aspect-ratio:1.62}.envelope-label{font-size:15px}.camera-wrap{border-width:6px}.camera-screen{border-width:4px}.camera-controls i:nth-child(2){border-width:3px}.dialog-layout{padding-left:12px;padding-right:12px}.opened-letter{padding-left:25px;padding-right:25px}.letter-nav button{font-size:10px}.record-side h3{font-size:22px}.persistent-player{max-width:calc(100vw - 18px)}}
+@media(prefers-reduced-motion:reduce){.scrapbook *, .scrapbook *:before,.scrapbook *:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.birthday-copy,.birthday-art{opacity:1;transform:none}.vinyl.is-playing{animation:none}.envelope-button.is-opening .envelope-flap{transform:none}}
+.envelope-paper{position:absolute;z-index:2;left:14%;right:14%;top:7%;height:83%;background:repeating-linear-gradient(0deg,transparent 0 15px,#d9c5b72e 16px),linear-gradient(140deg,#fffaf1,#f4e9df);box-shadow:0 4px 12px #774c5838;transform:translateY(120%);transition:transform .33s .12s ease}.envelope-button.is-opening .envelope-paper{transform:translateY(-3%)}
+.record-side{position:relative;background:linear-gradient(145deg,#f5dce2f2,#eccbd4f0);box-shadow:0 12px 24px #60364424;padding:24px 14px;border:1px solid #f8e6e8;clip-path:polygon(0 1%,13% 0,27% 1%,41% 0,55% 1%,69% 0,84% 1%,100% 0,99% 18%,100% 36%,99% 53%,100% 71%,99% 87%,100% 100%,84% 99%,68% 100%,53% 99%,38% 100%,22% 99%,0 100%,1% 82%,0 64%,1% 46%,0 28%,1% 12%)}
+.envelope-person-name{display:block;width:max-content;max-width:100%;margin:0 auto 9px;padding:4px 15px 5px;background:var(--warm-ivory);border-bottom:2px solid var(--coral-pink);box-shadow:0 3px 8px #54323820;color:#456f7d;font:400 23px/1.35 var(--handwritten-font);text-align:center;overflow-wrap:anywhere;transform:rotate(-1deg)}
+.scrapbook{background:linear-gradient(180deg,#f3c3b73d 0%,#f3c3b752 42%,#e9a29345 100%)}
+.scrapbook:before{background:linear-gradient(180deg,#f1e9d615 0%,#f3c3b728 43%,#e9a2932b 100%)}
+.birthday-copy h1,.section-heading h2,.closing-section h2{color:var(--charcoal)}
+.scrapbook-button{background:var(--rosewood)}
+.scrapbook-button:hover{background:#572b3a}
+.birthday-scrap{background:var(--warm-ivory)}
+.sunset-orbit{background:radial-gradient(circle at 37% 32%,#f1e9d6d9,#f3c3b7bd 57%,#e9a293a8 100%)}
+.tape{background:#e9a293c9}
+.paper-flower{color:var(--coral-pink)}
+.flower-b{color:var(--dusty-sky)}
+.section-heading>p,.birthday-copy .hero-intro,.scroll-prompt{color:#514440}
+.envelope-art{background:linear-gradient(145deg,#f3c3b7 0%,#e9a293 48%,#d9877b 100%)}
+.envelope-flap{background:linear-gradient(150deg,#f8d5ce,#f3c3b7 75%)}
+.envelope-lace{background:radial-gradient(ellipse at center,#f1e9d6 0 25%,transparent 28%) 0 0/16px 11px repeat-x,linear-gradient(#f1e9d6,#f3c3b7)}
+.envelope-seal{background:radial-gradient(circle,#f1e9d6,#fff7e8 69%,#cbb7a3);color:var(--rosewood)}
+.camera-wrap{border-color:var(--coral-pink);background:linear-gradient(145deg,#f3c3b7,#e9a293 47%,#d9877b)}
+.camera-screen{box-shadow:0 0 0 2px var(--pale-blush),inset 0 0 18px #6c485522}
+.camera-controls i{background:radial-gradient(circle at 32% 29%,var(--warm-ivory),var(--coral-pink) 75%);border-color:var(--pale-blush)}
+.camera-controls i:nth-child(2){border-color:var(--pale-blush)}
+.closing-section{background:linear-gradient(135deg,#f3c3b7f2,#f1e9d6f2)}
+.closing-tape{background:#e9a293d6}
+.record-side{background:linear-gradient(145deg,#f3c3b7f5,#e9a293f2)}
+.vinyl{background:repeating-radial-gradient(circle,#f3c3b7 0 2px,#e9a293 3px 4px,#f3c3b7 5px 7px)}
+.vinyl-grooves{background:radial-gradient(circle,#f1e9d6 0 7%,#e9a293 8% 11%,#f3c3b7 12% 75%,#d9877b 76% 100%)}
+.opened-letter{background:linear-gradient(90deg,#f3c3b7 0 16px,transparent 16px),repeating-linear-gradient(0deg,transparent 0 31px,#d9cbbd24 32px),var(--warm-ivory)}
+.paperclip{border-color:#82676a}
+.sunset-orbit{background:radial-gradient(circle at 37% 32%,#f1e9d6d9,#f3c3b7bd 57%,#e9a293a8 100%)}
+.flower-b{color:var(--dusty-sky)}
+.camera-wrap{border-color:var(--coral-pink);box-shadow:0 17px 30px #51303c3d,inset 0 0 0 4px #efc9d6,inset 0 0 20px #8b455b55}
+.camera-screen{background:#f4eceb;border-color:#3b2931}
+.camera-screen img{background:#f5edec}
+.camera-controls i{background:radial-gradient(circle at 32% 29%,#fbe9ef,var(--coral-pink) 75%);border-color:var(--pale-blush)}
+.camera-controls i:nth-child(2){border-color:var(--pale-blush)}
+.camera-brand{color:#fff1f6}
+.record-side{background:linear-gradient(145deg,#f3c3b7f5,#e9a293f2)}
+.vinyl:before{border-color:#fff9;box-shadow:0 0 0 2px #a8647c22,0 0 0 9px #fff1}
+.opened-letter{background:linear-gradient(90deg,#f3c3b7 0 16px,transparent 16px),repeating-linear-gradient(0deg,transparent 0 31px,#d9cbbd24 32px),var(--warm-ivory)}
+.paperclip{border-color:#82676a}
+.closing-section{background:linear-gradient(135deg,#f3c3b7f2,#f1e9d6f2)}
+.closing-tape{background:#e9a293d6}
+.birthday-art:before,.birthday-art:after,.letters-section:before,.letters-section:after,.memories-section:before,.memories-section:after{position:absolute;z-index:1;pointer-events:none;line-height:1}
+.birthday-art:before{content:"\273F";left:2%;top:25%;font-size:36px;color:var(--dusty-sky);transform:rotate(-16deg);animation:drift 5.5s ease-in-out infinite}
+.birthday-art:after{content:"\2727";left:7%;top:55%;font-size:25px;color:var(--coral-pink);text-shadow:115px -110px 0 #e9a293,195px 72px 0 #c995a6;animation:twinkle 3.8s ease-in-out infinite}
+.letters-section:before{content:"\273F";right:3%;bottom:5%;font-size:31px;color:var(--pale-blush);transform:rotate(14deg);animation:drift 6s ease-in-out infinite}
+.letters-section:after{content:"\2727";right:8%;top:28%;font-size:19px;color:var(--coral-pink);text-shadow:-42px 86px 0 #e9a293;animation:twinkle 3.2s ease-in-out infinite}
+.memories-section:before{content:"\273F";left:2%;bottom:6%;font-size:38px;color:var(--dusty-sky);transform:rotate(-12deg);animation:drift 6.3s ease-in-out infinite}
+.memories-section:after{content:"\2727";right:3%;top:27%;font-size:25px;color:var(--coral-pink);text-shadow:-50px 103px 0 #e9a293,22px 155px 0 #c995a6;animation:twinkle 3.5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.55;scale:.88}50%{opacity:1;scale:1.12}}
+.dedication{font-size:29px;line-height:1.35}
+.section-note{font-size:24px;line-height:1.4}
+.envelope-person-name{font-size:23px;line-height:1.4}
+.envelope-label{font-size:clamp(15px,1.8vw,19px);line-height:1.35}
+.opened-letter h2.handwritten{font-size:31px;line-height:1.35}
+.dialog-signature{font-size:28px;line-height:1.4}
+.player-note{font-size:21px;line-height:1.4}
+.gallery-note{font-size:19px;line-height:1.4}
+.closing-hand{font-size:25px;line-height:1.4}
+@media(max-width:430px){.dedication{font-size:25px}.section-note{font-size:21px}.envelope-person-name{font-size:21px}.envelope-label{font-size:17px}.opened-letter h2.handwritten{font-size:28px}.dialog-signature{font-size:25px}.player-note{font-size:19px}.gallery-note{font-size:17px}.closing-hand{font-size:21px}}
+.scrapbook-figure-sticker{position:absolute;z-index:5;top:0;right:0;width:clamp(112px,18vw,190px);height:auto;filter:drop-shadow(0 8px 7px #442a3233);transform:rotate(8deg);pointer-events:none}
+.lyric-style-sticker{position:absolute;z-index:5;left:-4%;bottom:4%;width:clamp(152px,21vw,224px);padding:14px 12px 12px;background:#fff9f2;border:5px solid #f3c3b7;box-shadow:0 7px 15px #49293333;font-size:clamp(18px,2.4vw,26px);line-height:1.25;text-align:center;transform:rotate(-7deg);clip-path:polygon(0 2%,12% 0,23% 2%,35% 0,47% 2%,60% 0,72% 2%,86% 0,100% 2%,98% 20%,100% 37%,98% 55%,100% 72%,98% 100%,82% 98%,66% 100%,50% 98%,34% 100%,17% 98%,0 100%,2% 80%,0 62%,2% 43%,0 24%)}
+.sticker-heart-mark{position:absolute;right:7px;top:3px;color:#e9a293;font:19px var(--sans)}
+.sparkle-sticker{position:absolute;z-index:6;pointer-events:none;color:#e9a293;text-shadow:0 2px 5px #743f4d40;animation:twinkle 2.8s ease-in-out infinite}
+.sparkle-sticker-one{right:2%;top:36%;font-size:27px}
+.sparkle-sticker-two{left:8%;top:8%;font-size:21px;color:#c995a6;animation-delay:-1.2s}
+@media(max-width:760px){.scrapbook-figure-sticker{width:clamp(95px,27vw,145px);right:0;top:0}.lyric-style-sticker{left:-3%;bottom:0;width:clamp(145px,44vw,190px);font-size:clamp(18px,5vw,22px)}.sparkle-sticker-one{right:0;top:43%}.sparkle-sticker-two{left:5%;top:8%}}
+@media(max-width:430px){.scrapbook-figure-sticker{width:100px;right:2%;top:0}.lyric-style-sticker{left:0;bottom:1%;width:150px;padding:11px 9px;font-size:19px}.birthday-art{overflow:visible}}
+.uploaded-quote-sticker{display:block;height:auto;padding:0;border:0;background:transparent;box-shadow:none;clip-path:none;object-fit:contain;mix-blend-mode:multiply}
+.birthday-copy h1 em,.section-heading h2 em,.handwritten,.envelope-label,.envelope-person-name,.section-kicker>span:first-child,.section-heading .eyebrow,.birthday-copy .eyebrow,.closing-section .eyebrow,.back-to-top{color:#456f7d}
+.scrapbook-button{background:#456f7d}
+.scrapbook-button:hover{background:#355a67}
+.scrapbook-button:focus-visible,.envelope-button:focus-visible,.letter-dialog button:focus-visible,.gallery-buttons button:focus-visible,.persistent-player button:focus-visible,.photo-lightbox button:focus-visible,.back-to-top:focus-visible{outline-color:#456f7d}
+.envelope-person-name{color:#456f7d}
+.envelope-label{text-shadow:0 1px #fff9}
+.section-kicker .kicker-rule{background:#7d9ba6}
+.scattered-doodle{position:absolute;z-index:1;pointer-events:none;line-height:1;color:#456f7d;text-shadow:0 3px 8px #52323922;animation:drift 5.5s ease-in-out infinite}
+.letter-doodle-one{right:1.5%;top:48%;font-size:36px;color:#7d9ba6;transform:rotate(12deg)}
+.letter-doodle-two{left:1%;bottom:15%;font-size:28px;color:#e9a293;transform:rotate(-12deg)}
+.memory-doodle-one{right:1.5%;top:38%;font-size:35px;color:#e9a293;transform:rotate(11deg)}
+.memory-doodle-two{left:1.5%;top:23%;font-size:34px;color:#7d9ba6;transform:rotate(-9deg);animation-delay:-2s}
+.closing-flower-doodle{position:absolute;left:8%;top:31%;font-size:39px;color:#7d9ba6;transform:rotate(-14deg);animation:drift 5.8s ease-in-out infinite;pointer-events:none}
+.closing-hand span,.section-note span,.envelope-seal,.moment-doodle{color:#456f7d}
+.paper-flower.flower-b{color:#7d9ba6}
+.hero-sticker-word{color:#456f7d}
+.tiny-star,.sparkle-sticker{color:#456f7d}
+.birthday-art .sticker-heart{color:#456f7d}
+.letter-flower{color:#7d9ba6}
+.player-note{color:#456f7d}
+.gallery-note{color:#456f7d}
+.closing-hand{color:#456f7d}
+@media(max-width:760px){.letter-doodle-one{right:0;top:54%;font-size:30px}.letter-doodle-two{left:0;bottom:8%}.memory-doodle-one{right:0;top:49%;font-size:30px}.memory-doodle-two{left:0;top:18%;font-size:29px}.closing-flower-doodle{left:5%;top:18%;font-size:30px}}
+@media(max-width:430px){.scrapbook-figure-sticker{width:92px}.uploaded-quote-sticker{width:clamp(150px,42vw,178px)}.letter-doodle-one,.memory-doodle-one{right:2px;font-size:25px}.letter-doodle-two,.memory-doodle-two{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.scattered-doodle,.closing-flower-doodle,.sparkle-sticker,.birthday-art:before,.birthday-art:after,.letters-section:before,.letters-section:after,.memories-section:before,.memories-section:after{animation:none!important;transition:none!important}}
+.birthday-copy h1,.section-heading h2,.closing-section h2{color:#3e2926}
+.birthday-copy h1 em,.section-heading h2 em,.opened-letter h2.handwritten{color:var(--rosewood)}
+.spotify-embed-shell{width:100%;margin:16px auto 10px;overflow:hidden;border-radius:12px;background:#f1e9d6;box-shadow:0 8px 18px #51303c24}
+.spotify-embed-shell[hidden]{display:none!important}
+.spotify-embed-shell iframe{display:block;width:100%;height:152px;border:0;border-radius:12px}
+.letter-dialog [hidden],.record-side [hidden]{display:none!important}
+.spotify-open-link[hidden]{display:none}
+.spotify-open-link{display:inline-block;margin:3px 0 13px;color:#456f7d;font:600 10px var(--sans);text-decoration:underline;text-underline-offset:3px}
+.spotify-open-link:focus-visible{outline:2px solid #456f7d;outline-offset:3px}
+.opening-audio-control{display:flex;align-items:center;gap:9px;margin-top:13px;padding:8px 12px;border:1px solid #7d9ba6;border-radius:24px;background:#f1e9d6d9;color:#456f7d;font:600 10px var(--sans);cursor:pointer}
+.opening-audio-control[hidden]{display:none}
+.opening-audio-control:hover{background:#a5b7ba55}
+.opening-audio-control:focus-visible{outline:2px solid #456f7d;outline-offset:3px}
+
+/* Sticker layers: content is 1, paper is 2, decorations are 8. */
+.birthday-hero,.birthday-art,.scrap-section,.closing-section{overflow:visible}
+.birthday-art,.scrap-section,.closing-section{isolation:isolate}
+.birthday-art{z-index:3}
+.placed-sticker{position:absolute;z-index:8;height:auto;object-fit:contain;pointer-events:none;user-select:none;filter:drop-shadow(0 7px 8px #442a3226)}
+.birthday-art .scrapbook-figure-sticker,.birthday-art .uploaded-quote-sticker,.birthday-art .tape,.birthday-art .paper-flower,.birthday-art .tiny-star,.birthday-art .sparkle-sticker,.birthday-art:before,.birthday-art:after{z-index:8;pointer-events:none}
+.uploaded-quote-sticker{mix-blend-mode:normal}
+.letters-section .section-kicker,.letters-section .section-heading,.letters-section .section-note,.letters-section .envelope-grid,.memories-section .section-kicker,.memories-section .section-heading,.memories-section .section-note,.memories-section .camera-layout{position:relative;z-index:1}
+.hero-flower-sticker{width:54px;right:0;bottom:13%;transform:rotate(13deg)}
+
+.letter-dress-sticker{width:70px;left:10px;top:38%;transform:rotate(-8deg)}
+
+.letter-lilac-stars{width:62px;right:10px;top:59%;transform:rotate(8deg)}
+.letter-heart-pin{width:45px;left:10px;bottom:8%;transform:rotate(-17deg)}
+.letter-question-sticker{width:72px;right:10px;top:77%;transform:rotate(7deg)}
+.letter-yellow-flower{width:58px;left:10px;top:17%;transform:rotate(-8deg)}
+
+.memory-pink-flower{width:55px;left:10px;top:12%;transform:rotate(-12deg)}
+.memory-gold-flower{width:58px;right:10px;top:29%;transform:rotate(10deg)}
+.memory-coral-flower{width:54px;left:10px;bottom:8%;transform:rotate(12deg)}
+.memory-frame-sticker{width:68px;right:10px;bottom:4%;transform:rotate(-7deg)}
+.memory-flower-tag{width:54px;right:16px;top:5%;transform:rotate(4deg)}
+.closing-section{clip-path:none;background:none;box-shadow:none}
+.closing-section:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(135deg,#f3c3b7f2,#f1e9d6f2);clip-path:polygon(0 1%,8% 0,18% 1%,27% 0,37% 1%,47% 0,58% 1%,68% 0,78% 1%,89% 0,100% 1%,99% 14%,100% 27%,99% 40%,100% 53%,99% 67%,100% 80%,99% 100%,89% 99%,78% 100%,66% 99%,55% 100%,44% 99%,32% 100%,20% 99%,9% 100%,0 99%,1% 86%,0 72%,1% 59%,0 45%,1% 31%,0 16%)}
+.closing-section .eyebrow,.closing-section h2,.closing-section .closing-hand,.closing-section .back-to-top,.closing-bow{position:relative;z-index:1}
+.closing-tape,.closing-flower-doodle{z-index:8;pointer-events:none}
+.closing-phone-sticker{width:84px;left:-4%;top:36%;transform:rotate(-8deg)}
+
+.closing-car-sticker{width:124px;right:-4%;bottom:5%;transform:rotate(-4deg)}
+@media(max-width:760px){
+  .scrap-section{padding-left:52px;padding-right:52px}
+  .hero-flower-sticker{width:42px}
+  
+  .letter-dress-sticker{width:40px;left:4px}
+  .letter-question-sticker{width:40px;right:4px}
+  .letter-lilac-stars{width:36px;right:5px}
+  .letter-heart-pin,.letter-yellow-flower{width:32px;left:5px}
+  .memory-pink-flower,.memory-coral-flower{width:34px;left:5px}
+  .memory-gold-flower,.memory-frame-sticker,.memory-flower-tag{width:36px;right:5px}
+  
+  .closing-phone-sticker{width:48px;left:-4%;top:30%}
+  
+  .closing-car-sticker{width:76px;right:-3%;bottom:2%}
+}
+
+/* Give each decoration its own space instead of covering the content. */
+.scrap-section{padding-left:110px;padding-right:110px}
+.letter-doodle-two{left:32px;bottom:16%}
+.memory-doodle-one{right:24px;top:52%}
+.memory-doodle-two{left:24px;top:30%}
+.memories-section:before{left:16px;bottom:22%;font-size:25px}
+.memories-section:after{right:22px;top:65%;text-shadow:none}
+.letters-section:after{right:28px;top:44%;text-shadow:none}
+.closing-section{margin-bottom:125px}
+.closing-phone-sticker{top:auto;bottom:-65px;left:8%;width:65px}
+.closing-car-sticker{bottom:-58px;right:8%;width:100px}
+.closing-flower-doodle{left:5%;top:5px;font-size:28px}
+@media(max-width:1000px){
+ .birthday-hero{grid-template-columns:1fr}
+ .birthday-copy{max-width:590px}
+ .birthday-art{width:min(100%,430px);margin:40px auto 0}
+ .scrap-section{padding-left:60px;padding-right:60px}
+ 
+ .letter-dress-sticker{width:40px;left:7px}
+ .letter-question-sticker{width:40px;right:7px}
+ .letter-lilac-stars{width:36px;right:8px}
+ .letter-heart-pin,.letter-yellow-flower{width:32px;left:8px}
+ .memory-pink-flower,.memory-coral-flower{width:34px;left:8px}
+ .memory-gold-flower,.memory-frame-sticker,.memory-flower-tag{width:36px;right:8px}
+ .letter-doodle-one,.memory-doodle-one{right:12px;font-size:25px}
+ .letter-doodle-two,.memory-doodle-two{left:12px;font-size:24px}
+}
+@media(max-width:430px){
+ .birthday-art{min-width:0}
+ .scrap-section{padding-left:52px;padding-right:52px}
+ .closing-phone-sticker{width:48px;bottom:-58px}
+ .closing-car-sticker{width:76px;bottom:-50px}
+}
+
+/* Separate homes for the moving stars and smiling heart. */
+.letter-moving-stars{width:62px;right:16px;top:27%;transform:rotate(8deg)}
+.memory-smile-sticker{width:58px;left:24%;bottom:18px;transform:rotate(-10deg)}
+@media(max-width:1000px){
+ .letter-moving-stars{width:36px;right:8px}
+ .memory-smile-sticker{width:44px;left:24%;bottom:14px}
+}
+
+/* Restore the layered birthday collage from the reference photo. */
+.birthday-hero{column-gap:24px}
+.birthday-art{height:460px;min-width:0;width:100%}
+.birthday-art .birthday-scrap{top:95px;width:263px;min-height:294px}
+.birthday-art .birthday-scrap strong{font-size:34px}
+.birthday-art .sunset-orbit{top:100px;width:min(100%,340px);right:4%}
+.birthday-art .scrapbook-figure-sticker{top:5px;right:7%;width:170px;transform:rotate(8deg)}
+.birthday-art .uploaded-quote-sticker{top:auto;bottom:20px;left:0;width:190px;transform:rotate(-7deg)}
+.birthday-art .tape-a{top:125px;left:calc(50% - 120px);transform:rotate(-28deg)}
+.birthday-art .flower-a{left:auto;right:0;top:64px}
+.birthday-art .flower-b{left:0;right:auto;bottom:5px}
+.birthday-art .sparkle-sticker-one{top:260px;right:0}
+.birthday-art .sparkle-sticker-two{top:85px;left:4%}
+.birthday-art .star-a{top:285px;right:9%;bottom:auto}
+.birthday-art .star-b{top:130px;left:14%}
+.birthday-art:before{left:0;top:175px;font-size:36px}
+.birthday-art:after{left:5%;top:310px;font-size:25px;text-shadow:none}
+.birthday-art .sticker-flower{top:-12px;left:auto;right:0;font-size:35px}
+.birthday-art .sticker-heart{bottom:62px;right:-2%;font-size:19px}
+.birthday-art .hero-sticker-word{right:0;bottom:-10px;font-size:20px;z-index:8}
+.letter-pink-flower{width:44px;left:46%;bottom:24px;transform:rotate(13deg)}
+@media(max-width:1000px){.birthday-art{width:min(100%,430px);margin:40px auto 0}}
+@media(max-width:430px){
+ .birthday-art{height:420px}
+ .birthday-art .birthday-scrap{width:220px;min-height:245px}
+ .birthday-art .birthday-scrap strong{font-size:29px}
+ .birthday-art .scrapbook-figure-sticker{width:130px;top:20px;right:3%}
+ .birthday-art .uploaded-quote-sticker{width:155px;bottom:25px}
+ .birthday-art .sunset-orbit{width:250px;right:0}
+ .birthday-art .tape-a{top:112px;left:calc(50% - 105px);width:65px}
+ .birthday-art .flower-a{font-size:44px;top:70px;right:-2%}
+ .birthday-art .flower-b{font-size:36px;bottom:0}
+ .birthday-art .hero-sticker-word{font-size:17px;bottom:-14px}
+ .birthday-art .sparkle-sticker-one{top:245px}
+ .birthday-art .star-a{top:275px;right:2%}
+ .birthday-art .sticker-heart{bottom:20px;right:-2%}
+ .letter-pink-flower{width:34px}
+}
+
+/* Long letters and sender photos stay in the paper flow. */
+.dialog-paragraphs p{white-space:pre-line}
+.letter-nav{position:static;margin-top:32px;flex-wrap:wrap}
+.letter-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+.letter-photos button{border:0;padding:6px;background:#f1e9d6;box-shadow:0 3px 10px #54323820;cursor:zoom-in;min-width:0}
+.letter-photos img{display:block;width:100%;height:180px;object-fit:contain}
+@media(max-width:430px){.letter-photos img{height:145px}}
+
+/* Keep music accessible while reading long letters. */
+.record-side{align-self:start;position:sticky;top:16px;min-width:0;clip-path:none;border-radius:12px}
+.dialog-layout.without-song{grid-template-columns:minmax(0,1fr)}
+.spotify-embed-shell{min-height:152px}
+@media(max-width:760px){
+ .record-side{position:relative;top:auto;grid-row:1;padding:18px 12px;border-top:0}
+ .record-side .player-note{font-size:18px;margin-bottom:8px}
+ .record-side h3{font-size:21px}
+ .record-side .player-intro{margin-bottom:8px}
+ .spotify-embed-shell{margin:12px auto 8px}
+}
