@@ -797,6 +797,31 @@ window.BIRTHDAY_CONTENT = {
           "fit": "contain"
         }
       ]
+    },
+    {
+      "id": "bai",
+      "senderName": "Bai",
+      "personPhoto": {
+        "src": null,
+        "alt": "",
+        "caption": ""
+      },
+      "salutation": "Hi master!",
+      "paragraphs": [
+        "Happy happy birthday! Hindi tayo nagkikita pa pero sa chats palang natin, kinakawawa mo na ako hahaha. Sobrang happy ko lang na nakilala kita, truly grateful.",
+        "Hoping to see you soon, best wishes. ♡",
+        "Wish kolang para sayo, is maging healthy ka always and sana bawasbawasan mo yong sweets, and tsaka sanayin muna uminom ng mainit na tubig para sayo yan lahat."
+      ],
+      "signature": "",
+      "song": {
+        "title": "",
+        "artist": "",
+        "audioSrc": null,
+        "coverSrc": null,
+        "reason": ""
+      },
+      "isPlaceholder": false,
+      "photos": []
     }
   ],
   "memories": [
