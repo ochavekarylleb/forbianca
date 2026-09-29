@@ -809,16 +809,18 @@ window.BIRTHDAY_CONTENT = {
       "salutation": "Hi master!",
       "paragraphs": [
         "Happy happy birthday! Hindi tayo nagkikita pa pero sa chats palang natin, kinakawawa mo na ako hahaha. Sobrang happy ko lang na nakilala kita, truly grateful.",
-        "Hoping to see you soon, best wishes. ♡",
-        "Wish kolang para sayo, is maging healthy ka always and sana bawasbawasan mo yong sweets, and tsaka sanayin muna uminom ng mainit na tubig para sayo yan lahat."
+        "I wish na healthy ka always, and avoid too much sweets. Tsaka magsanay ka na ng warm water, wag cold lage hahaha",
+        "Hoping to see u soon! Best wishes! ❤️"
       ],
       "signature": "",
       "song": {
-        "title": "",
-        "artist": "",
+        "title": "Cross the Line",
+        "artist": "Ai.D",
         "audioSrc": null,
         "coverSrc": null,
-        "reason": ""
+        "reason": "",
+        "spotifyUrl": "https://open.spotify.com/track/50MtUIn3QC6fQ9O2ulbvpB",
+        "spotifyEmbedUrl": "https://open.spotify.com/embed/track/50MtUIn3QC6fQ9O2ulbvpB?utm_source=generator"
       },
       "isPlaceholder": false,
       "photos": []
