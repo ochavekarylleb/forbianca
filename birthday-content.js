@@ -560,9 +560,12 @@ window.BIRTHDAY_CONTENT = {
       "id": "tony",
       "senderName": "Tony",
       "personPhoto": {
-        "src": null,
-        "alt": "",
-        "caption": ""
+        "id": "tony-1",
+        "senderId": "tony",
+        "src": "assets/senders/tony/44D49300-3A93-48FC-9FC5-004EA43E39F3.JPG?v=55984908d884",
+        "alt": "Photo shared by Tony (1 of 2)",
+        "caption": "Memories with Tony",
+        "fit": "contain"
       },
       "song": {
         "title": "White Tee (with NO1-NOAH)",
@@ -580,7 +583,24 @@ window.BIRTHDAY_CONTENT = {
       ],
       "signature": "",
       "isPlaceholder": false,
-      "photos": []
+      "photos": [
+        {
+          "id": "tony-1",
+          "senderId": "tony",
+          "src": "assets/senders/tony/44D49300-3A93-48FC-9FC5-004EA43E39F3.JPG?v=55984908d884",
+          "alt": "Photo shared by Tony (1 of 2)",
+          "caption": "Memories with Tony",
+          "fit": "contain"
+        },
+        {
+          "id": "tony-2",
+          "senderId": "tony",
+          "src": "assets/senders/tony/B587402F-9E23-400C-8F3B-6A77D85410BC.JPG?v=db2d75d141e5",
+          "alt": "Photo shared by Tony (2 of 2)",
+          "caption": "Memories with Tony",
+          "fit": "contain"
+        }
+      ]
     },
     {
       "id": "abi",
@@ -977,6 +997,22 @@ window.BIRTHDAY_CONTENT = {
       "src": "assets/senders/nitro/prev.Q0a7zeUpXVqrI2vG31bIhd7ymjIEv-D1oEgtprDessA.JPG?v=8f530f5c3f61",
       "alt": "Photo shared by Nitro (1 of 1)",
       "caption": "Memories with Nitro",
+      "fit": "contain"
+    },
+    {
+      "id": "tony-1",
+      "senderId": "tony",
+      "src": "assets/senders/tony/44D49300-3A93-48FC-9FC5-004EA43E39F3.JPG?v=55984908d884",
+      "alt": "Photo shared by Tony (1 of 2)",
+      "caption": "Memories with Tony",
+      "fit": "contain"
+    },
+    {
+      "id": "tony-2",
+      "senderId": "tony",
+      "src": "assets/senders/tony/B587402F-9E23-400C-8F3B-6A77D85410BC.JPG?v=db2d75d141e5",
+      "alt": "Photo shared by Tony (2 of 2)",
+      "caption": "Memories with Tony",
       "fit": "contain"
     },
     {
